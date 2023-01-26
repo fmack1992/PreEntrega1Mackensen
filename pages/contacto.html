@@ -45,7 +45,7 @@
                 <li><a href="./remeras.html">REMERAS</a></li>
                 <li><a href="./buzos.html">BUZOS</a></li>
                 <li><a href="./accesorios.html">ACCESORIOS Y OTROS</a></li>
-                <li><a href="./contacto.html">CONTACTO</a></li>
+                <li><a href="./contacto.html" class="menuActive">CONTACTO</a></li>
             </ul>
             <div class="signIn">
                 <a href="#" class="user"><i class="bi bi-door-open">Login</i></a>
@@ -53,23 +53,44 @@
             </div>
         </nav>
     </header>
-    <!--Footer-->
-    <footer>
-        <nav class="footer-container">
-            <ul class="redes-container">
-                <li><a href=""><i class="bi bi-facebook"></i></a></li>
-                <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                <li><a href=""><i class="bi bi-youtube"></i></a></li>
-            </ul>
-            <div class="copyright">
-              <p>© 2023 RockHouse  </p>
-            </div>
-        </nav>
-    </footer>
+  <!--  SECCION CONTACTO  -->
+    <section class="seccionContacto">
+        <title>CONTACTO</title>
+        <div class="containerContacto">
+            <form action="" class="formContacto" >
+                <label>NOMBRE</label>  
+                <input type="text" class="inputForm" name="Nombre">  
+
+                <label>E-MAIL</label>
+                <input type="email" class="inputForm" name="email">
+
+                <label>TELEFONO</label>
+                <input type="tel" class="inputForm" name="Telefono">
+                
+                <label>MENSAJE</label>
+                <textarea name="Mensaje" class="textAreaForm" id="" cols = "30" rows="10"></textarea>
+                 
+                <input type="submit" class="enviarForm" value="ENVIAR" ></input>
+            </form>
+        </div>
+    </section> 
+ <!--Footer-->
+ <footer>
+    <nav class="footer-container">
+        <ul class="redes-container">
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank"><i class="bi bi-youtube"></i></a></li>
+        </ul>
+        <div class="copyright">
+          <p>© 2023 RockHouse  </p>
+        </div>
+    </nav>
+</footer>
       
     <!--JS Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!--JS Link-->
-    <!-- <script src="./index.js"></script> -->
+    <script src="./index.js"></script>
 </body>
 </html>

@@ -1,164 +1,118 @@
 
-const productos = [
-    {
-        codigo: "1",
-        nombre: "Producto 01",
-        precio: 500
-    },
-    {
-        codigo: "2",
-        nombre: "Producto 02",
-        precio: 1000
-    },
-    {
-        codigo: "3",
-        nombre: "Producto 03",
-        precio: 2000
-    },
-    {
-        codigo: "4",
-        nombre: "Producto 04",
-        precio: 800
-    },
-    {
-        codigo: "5",
-        nombre: "Producto 05",
-        precio: 3500
-    },
-    {
-        codigo: "6",
-        nombre: "Producto 06",
-        precio: 2500
-    },
-    {
-        codigo: "7",
-        nombre: "Producto 07",
-        precio: 7000
+class Producto {
+    constructor(codigo, nombre, precio){
+    this.codigo = codigo;
+    this.nombre = nombre;
+    this.precio = precio;
     }
-];
 
-let carrito = [];
+    /* mostrarInformacion() {
+        alert(`- Codigo: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio}`)
+    } */
+}
+
+//Instancias de Class Producto
+const productos1 = new Producto("1", "Remera1", 5000);
+const productos2 = new Producto("2", "Remera2", 6000);
+const productos3 = new Producto("3", "Buzo1", 12000);
+const productos4 = new Producto("4", "Buzo2", 10000);
+const productos5 = new Producto("5", "Cinto1", 3000);
+const productos6 = new Producto("6", "Cinto2", 2500);
+const productos7 = new Producto("7", "Billetera1", 3500);
+
+
+//CARRITO CLASS
+class CarritoCompras{
+    constructor() {
+        this.productosCarrito = [];
+    }
+
+    addProductos(cantidad, precio) {
+        this.productosCarrito.push(...Array (cantidad).fill(precio)); //Los puntos suspensivos (spread operator) crean una copia del Array anterior. Para que más adelante no nos cree un Array por cada elemento. Fill rellena el arreglo.
+    }
+
+    /* mostrarProductos() {
+        alert(this.productosCarrito);
+    } */
+
+    calcTotal() {
+        return this.productosCarrito
+                    .map(precio => precio)
+                    .reduce( (acc, precio) => acc + precio, 0);
+    }
+
+    imprimirTicket() {
+        alert(`Total a pagar ${this.calcTotal()}`)
+    }
+}
+
+
 
 let eleccionUsuario = parseInt(prompt(`**** Bienvenido a RockHouse Store **** \n Ingrese el número de acuerdo a la acción que desea realizar: \n1: Ver lista de productos. \n2: Salir.`));
 
 while(eleccionUsuario != "1" && eleccionUsuario != "2") {
-    alert("Por favor, ingrese 1 para ver la Lista de Productos, o 2 para Salir.")
+    alert("Por favor, ingrese 1 si desea ver la Lista de Productos, o 2 para Salir.")
     eleccionUsuario = parseInt(prompt(`\n1: Ver lista de productos. \n2: Salir.`));
 }
 
 if(eleccionUsuario == "1") {
-    let listaProductos = productos.map(
-        (producto) => producto.codigo + " - " + producto.nombre + " - " + "$" + producto.precio
-    );
-    alert(listaProductos.join(`\n`))
+    alert (`A continuación se desplegará la lista de productos`)
 } else if (eleccionUsuario == "2") {
     alert("¡Muchas gracias por visitarnos!")
 }
 
+
+const carrito = new CarritoCompras(); //Se arma el carrito
+
+//CLIENTE SELECCIONA PRODUCTOS
 while (eleccionUsuario != "2") {
-    let producto = prompt("Agrega un producto a tu carrito, indicando el codigo correspondiente:")
-    let precio = 0
+    let productoElegido = prompt (`\n Por favor, ingrese el codigo del producto para agregarlo al carrito: \n- Codigo: ${productos1.codigo}, Nombre: ${productos1.nombre}, Precio: ${productos1.precio}\n- Codigo: ${productos2.codigo}, Nombre: ${productos2.nombre}, Precio: ${productos2.precio}\n- Codigo: ${productos3.codigo}, Nombre: ${productos3.nombre}, Precio: ${productos3.precio}\n- Codigo: ${productos4.codigo}, Nombre: ${productos4.nombre}, Precio: ${productos4.precio} \n- Codigo: ${productos5.codigo}, Nombre: ${productos5.nombre}, Precio: ${productos5.precio} \n- Codigo: ${productos6.codigo}, Nombre: ${productos6.nombre}, Precio: ${productos6.precio}\n- Codigo: ${productos7.codigo}, Nombre: ${productos7.nombre}, Precio: ${productos7.precio} \n *Para finalizar, ingrese el número 8`)
+    
 
-    if(producto == "1" || producto == "2" || producto == "3" || producto == "4" || producto == "5" || producto == "6" || producto == "7") {
-        switch(producto) {
-            case "1":
-            precio = 500;
-            break;
+ //QUE PASA SI EL CLIENTE SELECCIONA UN PRODUCTO???? Si el cliente seleeciona un producto, agrego una unidad y el precio del producto elegido.
+ if(productoElegido == "1" || productoElegido == "2" || productoElegido == "3" || productoElegido == "4" || productoElegido == "5" || productoElegido == "6" || productoElegido == "7") {
+    switch(productoElegido) {
+        case "1":
+        carrito.addProductos(1, productos1.precio); //Si el cliente seleeciona un producto, agrego una unidad y el precio del producto elegido.
+        break;
 
-            case "2":
-            precio = 1000;
-            break;
+        case "2":
+        carrito.addProductos(1, productos2.precio);
+        break;
 
-            case "3":
-            precio = 2000;
-            break;
+        case "3":
+        carrito.addProductos(1, productos3.precio);
+        break;
 
-            case "4":
-            precio = 800;
-            break;
+        case "4":
+        carrito.addProductos(1, productos4.precio);
+        break;
 
-            case "5":
-            precio = 3500;
-            break;
+        case "5":
+        carrito.addProductos(1, productos5.precio);
+        break;
 
-            case "6":
-            precio = 2500;
-            break;
+        case "6":
+        carrito.addProductos(1, productos6.precio);
+        break;
 
-            case "7":
-            precio = 7000;
-            break;
+        case "7":
+        carrito.addProductos(1, productos7.precio);
+        break;
 
-            default:
-            break;
-        }
-        let unidades = parseInt(prompt("Por favor, indique cuántas unidades desea adquirir"))
-        carrito.push({producto, unidades, precio})
-        console.log(carrito)
-    } else {
-        alert("No ha seleccionado una opción valida")
-    }
+        default:
+        break;
+    } 
+ }
     eleccionUsuario = prompt("Ingrese 1 para seguir comprando, o 2 para salir.")
     while(eleccionUsuario == "2"){
         alert("Muchas gracias por su compra")
-        carrito.forEach((carritoFinal) => {
-            alert(`producto: ${carritoFinal.producto}, unidades ${carritoFinal.unidades}, Total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
-        })
-    break;
+        break;
     }
 }
 
-const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
-alert(`El total a pagar es: ${total}`)
+/* carrito.mostrarProductos(); MEJORAR EL CODIGO PARA QUE ME MUESTRE UN DETALLE CON NOMBRE DE PRODUCTOS*/
+
+carrito.imprimirTicket();
 
 
-
-
-
-
-
-//CODIGO ANTERIOR
-/*function comprar () {
-    let codigo
-do{
-    //Solicitud de código:
-    codigo = parseInt(prompt(`**** Bienvenido a RockHouse Store **** \n Ingrese el número de acuerdo a la opción que desea adquirir: \n1: Producto 1 $500. \n2: Producto 2 $1000. \n3 Producto 3 $2000. \n4 Producto 4 $800. \n5 Producto 5 $3500. \n6 Producto 6 $2500. \n7 Producto 7 $7000. \n8 Ingrese 8 para finalizar su pedido.`));
-
-    //Casos:
-    switch(codigo){
-        case 1: producto1 +=1; alert ("Usted ha adquirido una unidad de Producto 1");
-        break;
-
-        case 2: producto2 +=1; alert ("Usted ha adquirido una unidad de Producto 2");
-        break;
-
-        case 3: producto3 +=1; alert ("Usted ha adquirido una unidad de Producto 3");
-        break;
-
-        case 4: producto4 +=1; alert ("Usted ha adquirido una unidad de Producto 4");
-        break;
-
-        case 5: producto5 +=1; alert ("Usted ha adquirido una unidad de Producto 5");
-        break;
-
-        case 6: producto6 +=1; alert ("Usted ha adquirido una unidad de Producto 6");
-        break;
-
-        case 7: producto7 +=1; alert ("Usted ha adquirido una unidad de Producto 7");
-        break;
-
-        case 8: alert ("Usted ha finalizado su pedido.");
-        break;
-
-        default: alert("Ha seleccionado una opción no valida.");
-    } //fin switch
-}   while (codigo != 8);
-};
-
-comprar();
-alert(`El detalle de su pedido es: \n Producto 1: ${producto1}. \n Producto 2: ${producto2}. \n Producto 3: ${producto3}. \n Producto 4: ${producto4}. \n Producto 5: ${producto5}. \n Producto 6: ${producto6}. \n Producto 7: ${producto7}`);
-
-const TOTALPEDIDO = (producto1, producto2, producto3, producto4, producto5, producto6, producto7) => producto1 * precioProd1 + producto2 * precioProd2 + producto3 * precioProd3 + producto4 * precioProd4 + producto5 * precioProd5 + producto6 * precioProd6 + producto7 * precioProd7;
-
-let totalPagar = TOTALPEDIDO(producto1, producto2, producto3, producto4, producto5, producto6, producto7);
-alert(`El total a pagar es de ${totalPagar}`) */
