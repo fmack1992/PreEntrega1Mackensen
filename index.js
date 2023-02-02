@@ -1,118 +1,279 @@
+const items = [];
 
-class Producto {
-    constructor(codigo, nombre, precio){
-    this.codigo = codigo;
+class Productos {
+  constructor(id, nombre, categoria, imagen, precio) {
+    this.id = id;
     this.nombre = nombre;
+    this.categoria = categoria;
+    this.imagen = imagen;
     this.precio = precio;
-    }
-
-    /* mostrarInformacion() {
-        alert(`- Codigo: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio}`)
-    } */
+  }
 }
 
 //Instancias de Class Producto
-const productos1 = new Producto("1", "Remera1", 5000);
-const productos2 = new Producto("2", "Remera2", 6000);
-const productos3 = new Producto("3", "Buzo1", 12000);
-const productos4 = new Producto("4", "Buzo2", 10000);
-const productos5 = new Producto("5", "Cinto1", 3000);
-const productos6 = new Producto("6", "Cinto2", 2500);
-const productos7 = new Producto("7", "Billetera1", 3500);
+items.push(
+  new Productos(
+    "Remera01",
+    "AC DC - We Salute You",
+    "Remeras",
+    "../img/Remeras/ac dc.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera02",
+    "Almafuerte",
+    "Remeras",
+    "../img/Remeras/almafuerte.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera03",
+    "Classic Batman",
+    "Remeras",
+    "../img/Remeras/batman.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera04",
+    "Blink 182",
+    "Remeras",
+    "../img/Remeras/blink 182.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera05",
+    "White Bowie",
+    "Remeras",
+    "../img/Remeras/bowie.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera06",
+    "Heisenberg",
+    "Remeras",
+    "../img/Remeras/breaking bad.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera07",
+    "Chewabacca",
+    "Remeras",
+    "../img/Remeras/chewabacca.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Remera08",
+    "Listen to Cobain",
+    "Remeras",
+    "../img/Remeras/cobain.jpg",
+    5000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo01",
+    "AC DC - Gray",
+    "Buzos",
+    "../img/Buzos/ac dc 2.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo02",
+    "AC DC - Hells Bells",
+    "Buzos",
+    "../img/Buzos/ac dc 3.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo03",
+    "AC DC - Back in Black",
+    "Buzos",
+    "../img/Buzos/ac dc.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo04",
+    "The Beatles",
+    "Buzos",
+    "../img/Buzos/beatles.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo05",
+    "Guns N Roses",
+    "Buzos",
+    "../img/Buzos/guns.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo06",
+    "La Renga",
+    "Buzos",
+    "../img/Buzos/la renga.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo07",
+    "Led Zeppelin",
+    "Buzos",
+    "../img/Buzos/led zeppelin.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Buzo08",
+    "Iron Maiden",
+    "Buzos",
+    "../img/Buzos/maiden.jpg",
+    10000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio01",
+    "Billetera Devil",
+    "Accesorios",
+    "../img/Accesorios y otros/billetera 1.jpg",
+    3000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio02",
+    "Billetera Star",
+    "Accesorios",
+    "../img/Accesorios y otros/billetera 2.jpg",
+    3000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio03",
+    "Cinto Ojuelas",
+    "Accesorios",
+    "../img/Accesorios y otros/cinto 1.jpg",
+    4000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio04",
+    "Cinto Tachas",
+    "Accesorios",
+    "../img/Accesorios y otros/cinto 2.jpg",
+    4000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio05",
+    "Entradas Cosquin Rock",
+    "Accesorios",
+    "../img/Accesorios y otros/entradas cosquin rock.png",
+    18000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio06",
+    "Entradas Music Festival",
+    "Accesorios",
+    "../img/Accesorios y otros/entradas music festival.jpg",
+    3000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio07",
+    "Gorra - La Renga",
+    "Accesorios",
+    "../img/Accesorios y otros/gorra 1.jpg",
+    6000
+  )
+);
+items.push(
+  new Productos(
+    "Accesorio08",
+    "Gorra - Pantera",
+    "Accesorios",
+    "../img/Accesorios y otros/gorra 2.jpg",
+    6000
+  )
+);
 
 
-//CARRITO CLASS
-class CarritoCompras{
-    constructor() {
-        this.productosCarrito = [];
-    }
 
-    addProductos(cantidad, precio) {
-        this.productosCarrito.push(...Array (cantidad).fill(precio)); //Los puntos suspensivos (spread operator) crean una copia del Array anterior. Para que más adelante no nos cree un Array por cada elemento. Fill rellena el arreglo.
-    }
+const contenedorProductos = document.getElementById(
+  "contenedor-productos-secciones"
+);
+const menuCategoria = document.querySelectorAll(".menu-categoria");
+console.log(menuCategoria);
 
-    /* mostrarProductos() {
-        alert(this.productosCarrito);
-    } */
+function cargarProducto(todosItems) {
+  contenedorProductos.innerHTML = "";
 
-    calcTotal() {
-        return this.productosCarrito
-                    .map(precio => precio)
-                    .reduce( (acc, precio) => acc + precio, 0);
-    }
+  todosItems.forEach((item) => {
+    const div = document.createElement("div"); //Agrego div contenedor de cada producto.
+    div.classList.add("card"); // Le agrego la clase al div creado.
+    div.innerHTML = `
+        <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}" />
+        <div class="card-body">
+            <h5 class="card-title">${item.nombre}</h5>
+            <p class="card-text">${item.precio}</p>
+            <a href="#" class="btn btn-primary" id="${item.id}">Agregar al carrito</a>
+        </div>
+      `;
 
-    imprimirTicket() {
-        alert(`Total a pagar ${this.calcTotal()}`)
-    }
+    contenedorProductos.append(div);
+  });
 }
 
+cargarProducto(items); //como queremos que cargue todos los productos, le pasamos el nombre del array items
+console.log(items); //HASTA ACA TODO JOYA, TRAE CATEGORIAS Y TRAE ARRAY ITEMS
 
+//ACA HAY ALGUN PROBLEMA, YA QUE NO ME FILTRA POR CATEGORIA CUANDO APLICO LO SIGUIENTE
+menuCategoria.forEach((menu) => {
+  menu.addEventListener("click", (e) => {
+    menuCategoria.forEach((menu) => menu.classList.remove("menuActive"));
+    e.currentTarget.classList.add("menuActive");
 
-let eleccionUsuario = parseInt(prompt(`**** Bienvenido a RockHouse Store **** \n Ingrese el número de acuerdo a la acción que desea realizar: \n1: Ver lista de productos. \n2: Salir.`));
-
-while(eleccionUsuario != "1" && eleccionUsuario != "2") {
-    alert("Por favor, ingrese 1 si desea ver la Lista de Productos, o 2 para Salir.")
-    eleccionUsuario = parseInt(prompt(`\n1: Ver lista de productos. \n2: Salir.`));
-}
-
-if(eleccionUsuario == "1") {
-    alert (`A continuación se desplegará la lista de productos`)
-} else if (eleccionUsuario == "2") {
-    alert("¡Muchas gracias por visitarnos!")
-}
-
-
-const carrito = new CarritoCompras(); //Se arma el carrito
-
-//CLIENTE SELECCIONA PRODUCTOS
-while (eleccionUsuario != "2") {
-    let productoElegido = prompt (`\n Por favor, ingrese el codigo del producto para agregarlo al carrito: \n- Codigo: ${productos1.codigo}, Nombre: ${productos1.nombre}, Precio: ${productos1.precio}\n- Codigo: ${productos2.codigo}, Nombre: ${productos2.nombre}, Precio: ${productos2.precio}\n- Codigo: ${productos3.codigo}, Nombre: ${productos3.nombre}, Precio: ${productos3.precio}\n- Codigo: ${productos4.codigo}, Nombre: ${productos4.nombre}, Precio: ${productos4.precio} \n- Codigo: ${productos5.codigo}, Nombre: ${productos5.nombre}, Precio: ${productos5.precio} \n- Codigo: ${productos6.codigo}, Nombre: ${productos6.nombre}, Precio: ${productos6.precio}\n- Codigo: ${productos7.codigo}, Nombre: ${productos7.nombre}, Precio: ${productos7.precio} \n *Para finalizar, ingrese el número 8`)
-    
-
- //QUE PASA SI EL CLIENTE SELECCIONA UN PRODUCTO???? Si el cliente seleeciona un producto, agrego una unidad y el precio del producto elegido.
- if(productoElegido == "1" || productoElegido == "2" || productoElegido == "3" || productoElegido == "4" || productoElegido == "5" || productoElegido == "6" || productoElegido == "7") {
-    switch(productoElegido) {
-        case "1":
-        carrito.addProductos(1, productos1.precio); //Si el cliente seleeciona un producto, agrego una unidad y el precio del producto elegido.
-        break;
-
-        case "2":
-        carrito.addProductos(1, productos2.precio);
-        break;
-
-        case "3":
-        carrito.addProductos(1, productos3.precio);
-        break;
-
-        case "4":
-        carrito.addProductos(1, productos4.precio);
-        break;
-
-        case "5":
-        carrito.addProductos(1, productos5.precio);
-        break;
-
-        case "6":
-        carrito.addProductos(1, productos6.precio);
-        break;
-
-        case "7":
-        carrito.addProductos(1, productos7.precio);
-        break;
-
-        default:
-        break;
-    } 
- }
-    eleccionUsuario = prompt("Ingrese 1 para seguir comprando, o 2 para salir.")
-    while(eleccionUsuario == "2"){
-        alert("Muchas gracias por su compra")
-        break;
+    /* La idea es que si hago click cualquier categoria que no sea HOME, me traiga los productos filtrados,
+      Si hago click en HOME, que me traiga Todos....si funcionara... */
+    if (e.currentTarget.id != "Todos") {
+      const itemsCategoria = items.filter(
+        (item) => item.categoria == e.currentTarget.id
+      );
+      cargarProducto(itemsCategoria);
+    } else {
+      cargarProducto(items);
     }
-}
-
-/* carrito.mostrarProductos(); MEJORAR EL CODIGO PARA QUE ME MUESTRE UN DETALLE CON NOMBRE DE PRODUCTOS*/
-
-carrito.imprimirTicket();
-
+  });
+});
 
