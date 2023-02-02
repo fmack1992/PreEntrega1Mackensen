@@ -29,10 +29,12 @@
         <div class="container-search-bar">
           <a href="../index.html" class="logo">Rock<span>House</span></a>
           <form>
-            <input type="search" name="" placeholder="Buscame">
+            <input type="search" name="" placeholder="Buscame" />
             <button type="submit">Buscar</button>
           </form>
-          <a href="./shoppingcart.html" class="shopping-cart"><i class="bi bi-cart"></i></a>
+          <a href="./shoppingcart.html" class="shopping-cart"
+            ><span class="numerito">0</span><i class="bi bi-cart"></i
+          ></a>
         </div>
     </nav>
     <!--Navbar Menu -->
@@ -41,10 +43,10 @@
         <!-- <i class="bi bi-list"></i> -->
         <!--Nav List-->
         <ul class="nav-list">
-            <li><a href="../index.html">HOME</a></li>
-            <li><a href="./remeras.html">REMERAS</a></li>
-            <li><a href="./buzos.html">BUZOS</a></li>
-            <li><a href="./accesorios.html" class="menuActive">ACCESORIOS Y OTROS</a></li>
+            <li><a id="Todos" class="menu-categoria" href="../index.html">HOME</a></li>
+            <li><a id="Remeras" class="menu-categoria" href="./remeras.html">REMERAS</a></li>
+            <li><a id="Buzos" class="menu-categoria" href="./buzos.html">BUZOS</a></li>
+            <li><a id="Accesorios" class="menu-categoria menuActive" href="./accesorios.html">ACCESORIOS Y OTROS</a></li>
             <li><a href="./contacto.html">CONTACTO</a></li>
         </ul>
         <div class="signIn">
@@ -54,8 +56,11 @@
     </nav>
 </header>
     <!--Cards section-->
-    <section class="contenedorSeccion">
-        <div class="card" style="width: 18rem;">
+    <section id="contenedor-productos-secciones" class="contenedorSeccion">
+
+      <!-- ESTO SE VA A LLENAR CON JS-->
+
+        <!-- <div class="card" style="width: 18rem;">
             <img src="../img/Accesorios y otros/billetera 1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Billetera Devil</h5>
@@ -119,64 +124,8 @@
               <p class="card-text"></p>
               <a href="#" class="btn btn-primary">Agregar al carrito</a>
             </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/gorra 3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Gorra - Motorhead</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/gorra 4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Gorra - Guns N' Roses</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/gorra 5.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Gorra - Vintage L.A</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/gorra 6.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Gorra - Vintage Drive Moons</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/gorra 7.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Gorra - Vintage Motorcycles</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            </div>
-          </div>
-<!--           <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/slash.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Figura - Slash</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Accesorios y otros/axl.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Figura - Axl</h5>
-              <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            </div>
           </div> -->
-    </section>
+      </section>
     <!--Footer-->
     <footer>
       <nav class="footer-container">
@@ -194,6 +143,6 @@
   <!--JS Bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!--JS Link-->
-  <!-- <script src="./index.js"></script> -->
+  <script src="../index.js"></script>
 </body>
 </html>
