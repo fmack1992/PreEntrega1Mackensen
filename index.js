@@ -10,6 +10,28 @@ class Productos {
   }
 }
 
+
+/* [
+  
+  {
+      "id": "abrigo-01",
+      "titulo": "Abrigo 01",
+      "imagen": "./img/abrigos/01.jpg",
+      "categoria": {
+          "nombre": "Abrigos",
+          "id": "abrigos"
+      },
+      "precio": 1000
+  },
+]
+ */
+
+
+
+
+
+
+
 //Instancias de Class Producto
 items.push(
   new Productos(
@@ -229,12 +251,11 @@ items.push(
 );
 
 
-
-const contenedorProductos = document.getElementById(
-  "contenedor-productos-secciones"
-);
+//DOM
+const contenedorProductos = document.getElementById("contenedor-productos-secciones");
 const menuCategoria = document.querySelectorAll(".menu-categoria");
-console.log(menuCategoria);
+let agregarProducto = document.querySelectorAll(".agregarProducto"); //let porque despues se va a modificar
+const numerito = document.querySelector(".numerito");
 
 function cargarProducto(todosItems) {
   contenedorProductos.innerHTML = "";
@@ -247,12 +268,14 @@ function cargarProducto(todosItems) {
         <div class="card-body">
             <h5 class="card-title">${item.nombre}</h5>
             <p class="card-text">${item.precio}</p>
-            <a href="#" class="btn btn-primary" id="${item.id}">Agregar al carrito</a>
+            <a href="#" class="btn btn-primary agregarProducto" id="${item.id}">Agregar al carrito</a>
         </div>
       `;
 
     contenedorProductos.append(div);
-  });
+  })
+
+  actualizarAgregarProoducto();
 }
 
 cargarProducto(items); //como queremos que cargue todos los productos, le pasamos el nombre del array items
@@ -276,4 +299,51 @@ menuCategoria.forEach((menu) => {
     }
   });
 });
+
+//Cada vez que se cargan productos nuevos, se actualizaran los botones de Agr. Product.
+function actualizarAgregarProoducto() {
+  agregarProducto = document.querySelectorAll(".agregarProducto");
+  
+  agregarProducto.forEach(agregar => {
+    agregar.addEventListener("click", agregarAlCarrito );
+  });
+}
+
+
+let productosEnCarrito;
+
+
+let productosEnCarritoStorage = localStorage.getItem("productos-en-carrito");
+
+if(productosEnCarritoStorage) {
+  productosEnCarrito = JSON.parse(productosEnCarritoStorage);
+  actualizarNumeritoCarrito();
+} else {
+  productosEnCarrito = [];
+}
+
+
+function agregarAlCarrito(e) {
+
+    const idAgregar = e.currentTarget.id;
+    const itemAgregado = items.find(item => item.id === idAgregar); 
+    
+    if(productosEnCarrito.some(item => item.id === idAgregar)) {
+      const indexProductosEnCarrito = productosEnCarrito.findIndex(item => item.id === idAgregar);
+      productosEnCarrito[indexProductosEnCarrito].cantidad++; //Esto lo hago para que, cuando elegimos el mismo producto dos veces, me aumente la "cantidad".
+    } else {
+    itemAgregado.cantidad = 1; //A "itemAgregado" le creamos la propiedad cantidad
+    productosEnCarrito.push(itemAgregado);//Al hacer click en "Agregar" me va a ir llenando el Array "productosEnCarrito" con los items seleccionados.
+    
+  }
+  actualizarNumeritoCarrito();
+
+
+  localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+}
+
+ function actualizarNumeritoCarrito () {
+  let nuevoNumerito = productosEnCarrito.reduce((acc, item) => acc +item.cantidad, 0);
+  numerito.innerText = nuevoNumerito;
+}
 

@@ -289,10 +289,6 @@ footer {
     height: 100vh;
 }
 
-.carrito-vacio{
-    display: none;
-}
-
 .container-carrito{
     display: flex;
     flex-direction: column;
@@ -378,4 +374,8 @@ footer {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     cursor: pointer;
+}
+
+.disabled{
+    display: none;
 }
